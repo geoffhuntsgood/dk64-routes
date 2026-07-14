@@ -1,62 +1,24 @@
-import { colors, createTheme } from "@mui/material";
+import { createTheme } from "@mui/material";
 
-const primary = colors.grey[900];
-const border = colors.grey[700];
-const background = "#141414";
+export const kongs = {
+  dk: "#f1c232",
+  diddy: "#ee0000",
+  lanky: "#4444ff",
+  tiny: "#9900ff",
+  chunky: "#009900"
+};
 
 export const theme = createTheme({
   components: {
-    MuiAccordion: {
-      styleOverrides: {
-        root: {
-          margin: "2rem auto",
-          border: `2px solid ${border}`
-        }
-      }
-    },
-    MuiAccordionSummary: {
-      styleOverrides: {
-        root: {
-          backgroundColor: background
-        }
-      }
-    },
-    MuiAccordionDetails: {
-      styleOverrides: {
-        root: {
-          backgroundColor: background,
-          overflowX: "hidden",
-          overflowY: "auto"
-        }
-      }
-    },
     MuiButton: {
       styleOverrides: {
         text: {
-          width: "95%",
-          height: "100%",
-          fontSize: "2rem",
+          fontSize: "2.5rem",
+          padding: "0 2rem",
+          color: "goldenrod",
           "&:hover": {
-            backgroundColor: border
+            color: "yellow"
           }
-        }
-      }
-    },
-    MuiDialog: {
-      styleOverrides: {
-        paper: {
-          width: "70%",
-          overflowX: "hidden",
-          color: "white",
-          backgroundColor: "rgb(0, 0, 50)",
-          border: "2px solid white"
-        }
-      }
-    },
-    MuiDialogTitle: {
-      styleOverrides: {
-        root: {
-          maxWidth: "90%"
         }
       }
     },
@@ -64,31 +26,34 @@ export const theme = createTheme({
       styleOverrides: {
         container: {
           width: "99vw",
-          height: "95vh",
+          height: "90vh",
           overflowX: "hidden",
           overflowY: "auto",
           margin: "0 auto"
         }
       }
     },
-    MuiIconButton: {
+    MuiTab: {
       styleOverrides: {
         root: {
-          color: primary,
-          marginLeft: "1rem",
-          marginTop: "-5px",
-          height: "2rem",
-          width: "2rem",
-          "&:hover": {
-            backgroundColor: "white"
+          fontSize: "3rem",
+          color: "goldenrod",
+          "&:hover, &.Mui-selected": {
+            color: "yellow"
           }
         }
       }
-    }
-  },
-  palette: {
-    text: {
-      primary: primary
+    },
+    MuiTabs: {
+      styleOverrides: {
+        indicator: {
+          backgroundColor: "yellow"
+        },
+        root: {
+          textAlign: "center",
+          marginBottom: "1rem"
+        }
+      }
     }
   },
   typography: {
@@ -98,16 +63,18 @@ export const theme = createTheme({
       width: "100%",
       fontSize: "3rem",
       fontWeight: "bold",
+      color: "white",
       backgroundColor: "rgb(0, 0, 50)"
     },
     h2: {
-      padding: "10px",
-      fontSize: "1.5rem",
-      fontWeight: "bold"
+      fontSize: "3rem",
+      fontWeight: "bold",
+      color: "goldenrod"
     },
     h3: {
-      color: "white"
+      padding: "10px",
+      fontSize: "2rem",
+      fontWeight: "bold"
     }
-  },
-  spacing: 8
+  }
 });

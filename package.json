@@ -1,5 +1,5 @@
 {
-  "name": "speedrun-router",
+  "name": "dk64-routes",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -17,8 +17,7 @@
     "@mui/icons-material": "^7.3.5",
     "@mui/material": "^7.3.5",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "react-dropzone": "^14.3.8"
+    "react-dom": "^19.1.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",

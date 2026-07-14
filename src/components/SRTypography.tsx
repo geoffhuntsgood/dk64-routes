@@ -5,27 +5,25 @@ export const SRTypography = ({
   text,
   id,
   backgroundColor,
-  header,
   headerColor,
   childJsx
 }: {
   text: string;
   id?: string;
   backgroundColor?: string;
-  header?: boolean;
   headerColor?: string;
   childJsx?: JSX.Element;
 }) => (
   <Typography
     id={id}
-    variant={header ? "h1" : "h2"}
+    variant={headerColor ? "h1" : "h3"}
     textAlign="center"
-    color={header ? headerColor : "textPrimary"}
-    borderBottom="1px solid black"
+    color={headerColor ? headerColor : "textPrimary"}
+    borderBottom="2px solid black"
     bgcolor={backgroundColor}
     position="relative"
   >
-    {text}
     {childJsx}
+    {text}
   </Typography>
 );
