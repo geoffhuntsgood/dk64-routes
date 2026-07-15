@@ -149,7 +149,8 @@ export const intermediate101: Route = {
       color: kongs.lanky
     },
     {
-      text: "Factory"
+      text: "Factory",
+      header: true
     },
     {
       text: "Activate W2 (5) Hatch Skip to open cage from out of bounds.",

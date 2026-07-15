@@ -1,4 +1,3 @@
-import { useKeyPress } from "@custom-react-hooks/use-key-press";
 import {
   Box,
   Button,
@@ -16,58 +15,70 @@ import * as lists from "./lists";
 import { theme } from "./utils/theme";
 
 const App = () => {
-  const [console, setConsole] = useState<"N64" | "WII U/NSO">("N64");
+  const [version, setVersion] = useState<"N64" | "WII U/NSO">("N64");
   const [category, setCategory] = useState<
     "any" | "nle" | "101" | "ces" | "other"
   >("any");
   const [routeList, setRouteList] = useState<Route[]>(lists.n64AnyList);
   const [route, setRoute] = useState<Route | null>(null);
-  const [currHeaderIndex, setCurrHeaderIndex] = useState(0);
+  const [headers, setHeaders] = useState<string[]>([]);
+  const [currHeaderIndex, setCurrHeaderIndex] = useState<number>(0);
 
-  let headers: string[] = [];
-
-  const leftPressed = useKeyPress("ArrowLeft");
-  const rightPressed = useKeyPress("ArrowRight");
+  const handleArrows = (event: KeyboardEvent) => {
+    setTimeout(() => {
+      let curr = currHeaderIndex;
+      if (event.key === "ArrowLeft" && curr > 0) {
+        curr--;
+      } else if (event.key === "ArrowRight" && curr < headers.length) {
+        curr++;
+      }
+      document.getElementById(headers[curr])?.scrollIntoView();
+      setCurrHeaderIndex(curr);
+    }, 0);
+  };
 
   useEffect(() => {
-    if (leftPressed && currHeaderIndex > 0) {
-      setCurrHeaderIndex(currHeaderIndex - 1);
-    }
-    if (rightPressed && currHeaderIndex < headers.length) {
-      setCurrHeaderIndex(currHeaderIndex + 1);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [leftPressed, rightPressed]);
+    window.addEventListener("keyup", handleArrows);
+
+    return () => {
+      window.removeEventListener("keyup", handleArrows);
+    };
+  }, [handleArrows]);
 
   useEffect(() => {
-    document.getElementById(headers[currHeaderIndex])?.scrollIntoView();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currHeaderIndex]);
+    const heads: string[] = [];
+    route?.steps.forEach((step: Step, index: number) => {
+      if (step.header) {
+        heads.push(`header-${index}`);
+      }
+    });
+    setHeaders(heads);
+  }, [route]);
 
   useEffect(() => {
     switch (category) {
       case "any":
-        setRouteList(console === "N64" ? lists.n64AnyList : lists.vcAnyList);
+        setRouteList(version === "N64" ? lists.n64AnyList : lists.vcAnyList);
         break;
       case "nle":
-        setRouteList(console === "N64" ? lists.n64NLEList : lists.vcNLEList);
+        setRouteList(version === "N64" ? lists.n64NLEList : lists.vcNLEList);
         break;
       case "101":
-        setRouteList(console === "N64" ? lists.n64101List : lists.vc101List);
+        setRouteList(version === "N64" ? lists.n64101List : lists.vc101List);
         break;
       case "ces":
-        setRouteList(console === "N64" ? lists.n64CEList : lists.vcCEList);
+        setRouteList(version === "N64" ? lists.n64CEList : lists.vcCEList);
         break;
       case "other":
         setRouteList(
-          console === "N64" ? lists.n64OtherList : lists.vcOtherList
+          version === "N64" ? lists.n64OtherList : lists.vcOtherList
         );
         break;
       default:
-        setRouteList(console === "N64" ? lists.n64AnyList : lists.vcAnyList);
+        setRouteList(version === "N64" ? lists.n64AnyList : lists.vcAnyList);
         break;
     }
-  }, [console, category]);
+  }, [version, category]);
 
   const RouteSelect = ({ route }: { route: Route }) => (
     <Typography variant="h2">
@@ -86,14 +97,10 @@ const App = () => {
   );
 
   const StepRow = (step: Step, index: number) => {
-    if (step.header) {
-      headers.push(`${index}`);
-    }
-
     return (
       <Grid size={12} key={index}>
         <SRTypography
-          id={`${index}`}
+          id={step.header ? `header-${index}` : ""}
           headerColor={step.header ? "black" : ""}
           text={step.text}
           backgroundColor={step.color ? step.color : "#d3d3d3"}
@@ -107,29 +114,27 @@ const App = () => {
       {!route && (
         <>
           <SRTypography headerColor="white" text="DK64 Speedrun Routes" />
-          <Box sx={{ textAlign: "center", margin: "0 auto" }}>
-            <Tabs
-              variant="fullWidth"
-              value={console}
-              onChange={(_, newValue) => setConsole(newValue)}
-            >
-              <Tab label="N64" value="N64" />
-              <Tab label="WII U/NSO" value="WII U/NSO" />
-            </Tabs>
-          </Box>
-          <Box sx={{ textAlign: "center", margin: "0 auto" }}>
-            <Tabs
-              variant="fullWidth"
-              value={category}
-              onChange={(_, newValue) => setCategory(newValue)}
-            >
-              <Tab label="ANY%" value="any" />
-              <Tab label="NLE" value="nle" />
-              <Tab label="101%" value="101" />
-              <Tab label="CES" value="ces" />
-              <Tab label="EXTRA" value="other" />
-            </Tabs>
+          <Tabs
+            centered
+            value={version}
+            onChange={(_, newValue) => setVersion(newValue)}
+          >
+            <Tab label="N64" value="N64" />
+            <Tab label="WII U/NSO" value="WII U/NSO" />
+          </Tabs>
+          <Tabs
+            centered
+            value={category}
+            onChange={(_, newValue) => setCategory(newValue)}
+          >
+            <Tab label="ANY%" value="any" />
+            <Tab label="NLE" value="nle" />
+            <Tab label="101%" value="101" />
+            <Tab label="CES" value="ces" />
+            <Tab label="EXTRA" value="other" />
+          </Tabs>
 
+          <Box sx={{ textAlign: "center" }}>
             {routeList.map((route: Route) => (
               <RouteSelect key={route.title} route={route} />
             ))}
@@ -146,7 +151,7 @@ const App = () => {
                 <Button
                   variant="text"
                   onClick={() => {
-                    headers = [];
+                    setHeaders([]);
                     setRoute(null);
                     setCurrHeaderIndex(0);
                   }}
