@@ -14,11 +14,12 @@ import { SRTypography } from "./components/SRTypography";
 import * as lists from "./lists";
 import { theme } from "./utils/theme";
 
+type Version = "N64" | "WII U/NSO";
+type Category = "any" | "nle" | "101" | "ces" | "other";
+
 const App = () => {
-  const [version, setVersion] = useState<"N64" | "WII U/NSO">("N64");
-  const [category, setCategory] = useState<
-    "any" | "nle" | "101" | "ces" | "other"
-  >("any");
+  const [version, setVersion] = useState<Version>("N64");
+  const [category, setCategory] = useState<Category>("any");
   const [routeList, setRouteList] = useState<Route[]>(lists.n64AnyList);
   const [route, setRoute] = useState<Route | null>(null);
   const [headers, setHeaders] = useState<string[]>([]);

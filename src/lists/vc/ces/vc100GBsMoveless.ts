@@ -9,9 +9,6 @@ export const vc100GBsMoveless: Route = {
       text: "(Adapted from TJ's 100GB No Moves N64 route)"
     },
     {
-      text: "(Still needs testing/tweaking)"
-    },
-    {
       text: "Setup:",
       header: true
     },
@@ -20,9 +17,6 @@ export const vc100GBsMoveless: Route = {
     },
     {
       text: "Cheats Allowed"
-    },
-    {
-      text: "(Infinite oranges really only saves time during training barrels?)"
     },
     {
       text: "[Start]",
@@ -92,7 +86,7 @@ export const vc100GBsMoveless: Route = {
       color: kongs.dk
     },
     {
-      text: "Exit/Enter Take W4 OR Phasewalk out on wall left of switch, enter T&S",
+      text: "Exit/Enter Take W4 OR phasewalk out on wall left of switch, enter T&S",
       color: kongs.dk
     },
     {
@@ -262,7 +256,7 @@ export const vc100GBsMoveless: Route = {
       text: "PHASEWALK ROUTE:"
     },
     {
-      text: "Phasewalk into BP {4}, Phasewalk back out to Funky",
+      text: "Phasewalk into BP {4}, phasewalk back out to Funky",
       color: kongs.diddy
     },
     {
@@ -441,14 +435,6 @@ export const vc100GBsMoveless: Route = {
       color: kongs.lanky
     },
     {
-      text: "Phasewalk to Krazy Kong Klamour GB [20].",
-      color: kongs.tiny
-    },
-    {
-      text: "You can phase at an acute angle facing away from the barrel on the highest conveyor.",
-      color: kongs.tiny
-    },
-    {
       text: "BP {6}",
       color: kongs.dk
     },
@@ -457,27 +443,27 @@ export const vc100GBsMoveless: Route = {
       color: kongs.diddy
     },
     {
-      text: "Free Chunky GB [21]",
+      text: "Free Chunky GB [20]",
       color: kongs.lanky
     },
     {
-      text: "Tag W1, BP {4}, Caged GB [22], enter T&S",
+      text: "Tag W1, BP {4}, Caged GB [21], enter T&S",
       color: kongs.tiny
     },
     {
-      text: "Exit T&S, SJJA to ledge grab cage, Phasewalk on right side, OOB to Stash Snatch [23]",
+      text: "Exit T&S, SJJA to ledge grab cage, phasewalk on right side, OOB to Stash Snatch [22]",
       color: kongs.chunky
     },
     {
-      text: "Phasewalk on Grate to exit, Phasewalk to BP {4}",
+      text: "Phasewalk on Grate to exit, phasewalk to BP {4}",
       color: kongs.chunky
     },
     {
-      text: "Block Tower [24]",
+      text: "Block Tower [23]",
       color: kongs.diddy
     },
     {
-      text: "Batty Barrel Bandit GB [25]",
+      text: "Batty Barrel Bandit GB [24]",
       color: kongs.lanky
     },
     {
@@ -485,7 +471,7 @@ export const vc100GBsMoveless: Route = {
       color: kongs.lanky
     },
     {
-      text: "Phasewalk (or re-enter Factory as Chunky and Robot Push) to Dark Room [26]",
+      text: "Phasewalk (or re-enter Factory as Chunky and Robot Push) to Dark Room [25]",
       color: kongs.chunky
     },
     {
@@ -493,7 +479,7 @@ export const vc100GBsMoveless: Route = {
       color: kongs.chunky
     },
     {
-      text: "Phasewalk into Crusher Room for GB [27]",
+      text: "Phasewalk into Crusher Room for GB [26]",
       color: kongs.dk
     },
     {
@@ -509,7 +495,7 @@ export const vc100GBsMoveless: Route = {
       color: kongs.dk
     },
     {
-      text: "BBB [28].",
+      text: "BBB [27].",
       color: kongs.diddy
     },
     {
@@ -537,7 +523,7 @@ export const vc100GBsMoveless: Route = {
       color: kongs.chunky
     },
     {
-      text: "Spawn Snag Cannon Game GB [29]",
+      text: "Spawn Snag Cannon Game GB [28]",
       color: kongs.chunky
     },
     {
@@ -553,7 +539,7 @@ export const vc100GBsMoveless: Route = {
       color: kongs.diddy
     },
     {
-      text: "Enguarde GB [30]",
+      text: "Enguarde GB [29]",
       color: kongs.lanky
     },
     {
@@ -561,15 +547,15 @@ export const vc100GBsMoveless: Route = {
       color: kongs.lanky
     },
     {
-      text: "STVW on wall right of/below spikes in front of 2DS for GB [31]",
+      text: "STVW on wall right of/below spikes in front of 2DS for GB [30]",
       color: kongs.lanky
     },
     {
-      text: "Tag W2. 5DS [32]",
+      text: "Tag W2. 5DS [31]",
       color: kongs.lanky
     },
     {
-      text: "Tag W4. SJBF Gold Tower [33]",
+      text: "Tag W4. SJBF Gold Tower [32]",
       color: kongs.lanky
     },
     {
@@ -581,11 +567,11 @@ export const vc100GBsMoveless: Route = {
       color: kongs.dk
     },
     {
-      text: "Stealthy Snoop [34]. W4 out. 5DS [35].",
+      text: "Stealthy Snoop [33]. W4 out. 5DS [34].",
       color: kongs.diddy
     },
     {
-      text: "Seal Race GB [36].",
+      text: "Seal Race GB [35].",
       color: kongs.diddy
     },
     {
@@ -597,15 +583,15 @@ export const vc100GBsMoveless: Route = {
       color: kongs.tiny
     },
     {
-      text: "Take W2. STVW on wall right of/below spikes in front of 2DS for bonus GB [37]",
+      text: "Take W2. STVW on wall right of/below spikes in front of 2DS for bonus GB [36]",
+      color: kongs.tiny
+    },
+    {
+      text: "5DS [37]",
       color: kongs.tiny
     },
     {
       text: "5DS [38]",
-      color: kongs.tiny
-    },
-    {
-      text: "5DS [39]",
       color: kongs.chunky
     },
     {
@@ -613,7 +599,7 @@ export const vc100GBsMoveless: Route = {
       color: kongs.chunky
     },
     {
-      text: "Submarine [40]",
+      text: "Submarine [39]",
       color: kongs.tiny
     },
     {
@@ -625,11 +611,11 @@ export const vc100GBsMoveless: Route = {
       header: true
     },
     {
-      text: "Lobby GB [41]",
+      text: "Lobby GB [40]",
       color: kongs.tiny
     },
     {
-      text: "BFI Caged GB [42]",
+      text: "BFI Caged GB [41]",
       color: kongs.tiny
     },
     {
@@ -637,11 +623,11 @@ export const vc100GBsMoveless: Route = {
       color: kongs.tiny
     },
     {
-      text: "Caged GB [43]",
+      text: "Caged GB [42]",
       color: kongs.lanky
     },
     {
-      text: "K. Lumsy Inner Cage GB [44]",
+      text: "K. Lumsy Inner Cage GB [43]",
       color: kongs.lanky
     },
     {
@@ -649,7 +635,7 @@ export const vc100GBsMoveless: Route = {
       color: kongs.lanky
     },
     {
-      text: "Enter Japes Lobby [45]",
+      text: "Enter Japes Lobby [44]",
       color: kongs.dk
     },
     {
@@ -657,7 +643,7 @@ export const vc100GBsMoveless: Route = {
       header: true
     },
     {
-      text: "Bush Push, STVW Caged GB [46]",
+      text: "Bush Push, STVW Caged GB [45]",
       color: kongs.dk
     },
     {
@@ -665,7 +651,7 @@ export const vc100GBsMoveless: Route = {
       color: kongs.dk
     },
     {
-      text: "Tag X W3. Climb to Diddy Cage. Free Diddy GBs [47, 48]",
+      text: "Tag X W3. Climb to Diddy Cage. Free Diddy GBs [46, 47]",
       color: kongs.dk
     },
     {
@@ -689,7 +675,7 @@ export const vc100GBsMoveless: Route = {
       color: kongs.lanky
     },
     {
-      text: "Speedy Swing Sortie [49]",
+      text: "Speedy Swing Sortie [48]",
       color: kongs.lanky
     },
     {
@@ -697,11 +683,11 @@ export const vc100GBsMoveless: Route = {
       color: kongs.lanky
     },
     {
-      text: "Underground BP {7}, GB [50]",
+      text: "Underground BP {7}, GB [49]",
       color: kongs.chunky
     },
     {
-      text: "Rock GB [51]",
+      text: "Rock GB [50]",
       color: kongs.chunky
     },
     {
@@ -709,7 +695,7 @@ export const vc100GBsMoveless: Route = {
       color: kongs.chunky
     },
     {
-      text: "W4. Caged GB [52]",
+      text: "W4. Caged GB [51]",
       color: kongs.tiny
     },
     {
@@ -717,11 +703,11 @@ export const vc100GBsMoveless: Route = {
       color: kongs.tiny
     },
     {
-      text: "Stump GB [53]",
+      text: "Stump GB [52]",
       color: kongs.tiny
     },
     {
-      text: "Through Red Wall to Caged GB [54]",
+      text: "Through Red Wall to Caged GB [53]",
       color: kongs.diddy
     },
     {
@@ -729,12 +715,19 @@ export const vc100GBsMoveless: Route = {
       color: kongs.diddy
     },
     {
-      text: "Caged GB [55]",
+      text: "Caged GB [54]",
       color: kongs.chunky
     },
     {
-      text: "Caged GB [56]",
+      text: "Caged GB [55]",
       color: kongs.lanky
+    },
+    {
+      text: "OOB on right of Lanky cage, long jump into/out of T&S alcove to enter Painting Hill",
+      color: kongs.lanky
+    },
+    {
+      text: "Painting Hill GB [56]"
     },
     {
       text: "STVW to Diddy Tunnel",
@@ -745,7 +738,7 @@ export const vc100GBsMoveless: Route = {
       color: kongs.lanky
     },
     {
-      text: "Enter/exit T&S and Phasewalk for Splish Splash Salvage GB [58]",
+      text: "Enter/exit T&S and phasewalk for Splish Splash Salvage GB [58]",
       color: kongs.tiny
     },
     {
@@ -781,7 +774,7 @@ export const vc100GBsMoveless: Route = {
       color: kongs.tiny
     },
     {
-      text: "Tumble or Phasewalk into Llama Temple. Tag Low W1, W2. Phasewalk to Lava GB [62].",
+      text: "Tumble or phasewalk into Llama Temple. Tag Low W1, W2. Phasewalk to Lava GB [62].",
       color: kongs.tiny
     },
     {
