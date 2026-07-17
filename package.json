@@ -7,14 +7,13 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "test": "vitest run",
-    "coverage": "vitest run --coverage"
+    "test": "vitest run --browser.headless",
+    "coverage": "vitest run --browser.headless --coverage"
   },
   "dependencies": {
     "@custom-react-hooks/use-key-press": "^1.5.1",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
-    "@mui/icons-material": "^7.3.5",
     "@mui/material": "^7.3.5",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
@@ -25,6 +24,7 @@
     "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
     "@vitejs/plugin-react": "^5.0.4",
+    "@vitest/browser-playwright": "^4.1.10",
     "@vitest/coverage-v8": "^4.0.9",
     "eslint": "^9.36.0",
     "eslint-plugin-react-hooks": "^5.2.0",
@@ -34,7 +34,8 @@
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.45.0",
     "vite": "^7.1.7",
-    "vitest": "^4.0.9"
+    "vitest": "^4.1.10",
+    "vitest-browser-react": "^2.2.0"
   },
   "prettier": {
     "trailingComma": "none"
