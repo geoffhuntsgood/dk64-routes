@@ -1,12 +1,13 @@
 name: NPM Build/Lint/Test
 "on": push
 jobs:
-  unit_test-lint:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: |
               npm ci
+              npx playwright install
               npm run build
               npm run lint
               npm run coverage
