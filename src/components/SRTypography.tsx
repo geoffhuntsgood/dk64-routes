@@ -3,25 +3,25 @@ import type { JSX } from "react";
 
 export const SRTypography = ({
   text,
+  variant,
   id,
-  isHeader,
   backgroundColor,
   childJsx
 }: {
   text: string;
+  variant: "h1" | "h2" | "h3";
   id?: string;
-  isHeader?: boolean;
   backgroundColor?: string;
   childJsx?: JSX.Element;
 }) => (
   <Typography
     id={id}
-    variant={isHeader ? "h1" : "h3"}
+    variant={variant}
     align="center"
     style={{
-      color: isHeader && !id ? "white" : "black",
+      color: variant === "h1" && !id ? "white" : "black",
       backgroundColor: backgroundColor,
-      borderBottom: "2px solid black"
+      borderBottom: variant !== "h2" ? "2px solid black" : ""
     }}
   >
     {childJsx}

@@ -18,11 +18,11 @@ import { getRouteList } from "../../utils/routeApi";
 describe("routeApi tests", () => {
   describe("N64", () => {
     test("ANY", () => {
-      expect(getRouteList("N64", "any")).toEqual(n64AnyList);
+      expect(getRouteList("N64", "ANY")).toEqual(n64AnyList);
     });
 
     test("NLE", () => {
-      expect(getRouteList("N64", "nle")).toEqual(n64NLEList);
+      expect(getRouteList("N64", "NLE")).toEqual(n64NLEList);
     });
 
     test("101", () => {
@@ -30,21 +30,21 @@ describe("routeApi tests", () => {
     });
 
     test("CES", () => {
-      expect(getRouteList("N64", "ces")).toEqual(n64CEList);
+      expect(getRouteList("N64", "CES")).toEqual(n64CEList);
     });
 
     test("OTHER", () => {
-      expect(getRouteList("N64", "other")).toEqual(n64OtherList);
+      expect(getRouteList("N64", "EXTRA")).toEqual(n64OtherList);
     });
   });
 
   describe("WII U/NSO", () => {
     test("ANY", () => {
-      expect(getRouteList("WII U/NSO", "any")).toEqual(vcAnyList);
+      expect(getRouteList("WII U/NSO", "ANY")).toEqual(vcAnyList);
     });
 
     test("NLE", () => {
-      expect(getRouteList("WII U/NSO", "nle")).toEqual(vcNLEList);
+      expect(getRouteList("WII U/NSO", "NLE")).toEqual(vcNLEList);
     });
 
     test("101", () => {
@@ -52,11 +52,11 @@ describe("routeApi tests", () => {
     });
 
     test("CES", () => {
-      expect(getRouteList("WII U/NSO", "ces")).toEqual(vcCEList);
+      expect(getRouteList("WII U/NSO", "CES")).toEqual(vcCEList);
     });
 
     test("OTHER", () => {
-      expect(getRouteList("WII U/NSO", "other")).toEqual(vcOtherList);
+      expect(getRouteList("WII U/NSO", "EXTRA")).toEqual(vcOtherList);
     });
   });
 });

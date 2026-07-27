@@ -1,7 +1,6 @@
 import { Box, Button, Grid } from "@mui/material";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
-import type { Route } from "../classes";
-import type { Step } from "../classes";
+import type { Route, Step } from "../classes";
 import { SRTypography } from "./SRTypography";
 
 export const RoutePage = ({
@@ -14,21 +13,6 @@ export const RoutePage = ({
   const [headers, setHeaders] = useState<string[]>([]);
   const [currHeaderIndex, setCurrHeaderIndex] = useState(0);
 
-  const handleArrows = (event: KeyboardEvent) => {
-    setTimeout(() => {
-      let curr = currHeaderIndex;
-      if (event.key === "ArrowLeft" && curr > 1) {
-        curr--;
-        document.getElementById(headers[curr - 1])?.scrollIntoView();
-        setCurrHeaderIndex(curr);
-      } else if (event.key === "ArrowRight" && curr < headers.length) {
-        curr++;
-        document.getElementById(headers[curr - 1])?.scrollIntoView();
-        setCurrHeaderIndex(curr);
-      }
-    }, 0);
-  };
-
   useEffect(() => {
     const heads: string[] = [];
     route?.steps.forEach((step: Step, index: number) => {
@@ -40,19 +24,34 @@ export const RoutePage = ({
   }, [route?.steps]);
 
   useEffect(() => {
+    const handleArrows = (event: KeyboardEvent) => {
+      setTimeout(() => {
+        let curr = currHeaderIndex;
+        if (event.key === "ArrowLeft" && curr > 1) {
+          curr--;
+          document.getElementById(headers[curr - 1])?.scrollIntoView();
+          setCurrHeaderIndex(curr);
+        } else if (event.key === "ArrowRight" && curr < headers.length) {
+          curr++;
+          document.getElementById(headers[curr - 1])?.scrollIntoView();
+          setCurrHeaderIndex(curr);
+        }
+      }, 0);
+    };
+
     window.addEventListener("keyup", handleArrows);
 
     return () => {
       window.removeEventListener("keyup", handleArrows);
     };
-  }, [handleArrows]);
+  }, [headers, currHeaderIndex]);
 
   const StepRow = (step: Step, index: number) => {
     return (
       <Grid size={12} key={index}>
         <SRTypography
           id={step.header ? `header-${index}` : ""}
-          isHeader={step.header}
+          variant={step.header ? "h1" : "h3"}
           text={step.text}
           backgroundColor={step.color ? step.color : "#d3d3d3"}
         />
@@ -63,7 +62,7 @@ export const RoutePage = ({
   return (
     <>
       <SRTypography
-        isHeader
+        variant="h1"
         text={route.title}
         childJsx={
           <Box style={{ position: "absolute", marginTop: "-0.4rem" }}>

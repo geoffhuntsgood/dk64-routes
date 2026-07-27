@@ -58,7 +58,6 @@ export const theme = createTheme({
   },
   typography: {
     fontFamily: "Jersey10",
-    fontSize: 16,
     h1: {
       width: "100%",
       fontSize: "3rem",
@@ -67,7 +66,6 @@ export const theme = createTheme({
       backgroundColor: "rgb(0, 0, 50)"
     },
     h2: {
-      fontSize: "3rem",
       fontWeight: "bold",
       color: "goldenrod"
     },

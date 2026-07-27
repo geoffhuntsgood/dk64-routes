@@ -17,15 +17,15 @@ import type { Category, Version } from "./types";
 
 export const getRouteList = (version: Version, category: Category): Route[] => {
   switch (category) {
-    case "any":
+    case "ANY":
       return version === "N64" ? n64AnyList : vcAnyList;
-    case "nle":
+    case "NLE":
       return version === "N64" ? n64NLEList : vcNLEList;
     case "101":
       return version === "N64" ? n64101List : vc101List;
-    case "ces":
+    case "CES":
       return version === "N64" ? n64CEList : vcCEList;
-    case "other":
+    case "EXTRA":
       return version === "N64" ? n64OtherList : vcOtherList;
     default:
       return version === "N64" ? n64AnyList : vcAnyList;

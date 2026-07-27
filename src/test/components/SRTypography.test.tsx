@@ -22,7 +22,7 @@ describe("SRTypography tests", () => {
         <SRTypography
           text={text}
           id={id}
-          isHeader={isHeader}
+          variant={isHeader ? "h1" : "h3"}
           backgroundColor={backgroundColor}
           childJsx={childJsx}
         />

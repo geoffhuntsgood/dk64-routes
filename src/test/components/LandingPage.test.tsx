@@ -30,7 +30,7 @@ describe("LandingPage tests", () => {
     expect(screen.getByText("ANY% BEGINNER")).not.toBeInTheDocument();
     expect(screen.getByText("NLE BEGINNER")).toBeVisible();
 
-    await screen.getByRole("tab").filter({ hasText: "101%" }).click();
+    await screen.getByRole("tab").filter({ hasText: "101" }).click();
     expect(screen.getByText("NLE BEGINNER")).not.toBeInTheDocument();
     expect(screen.getByText("101% BEGINNER")).toBeVisible();
 
@@ -52,7 +52,7 @@ describe("LandingPage tests", () => {
     expect(screen.getByText("ANY% BEGINNER")).not.toBeInTheDocument();
     expect(screen.getByText("NLE BEGINNER")).toBeVisible();
 
-    await screen.getByRole("tab").filter({ hasText: "101%" }).click();
+    await screen.getByRole("tab").filter({ hasText: "101" }).click();
     expect(screen.getByText("NLE BEGINNER")).not.toBeInTheDocument();
     expect(screen.getByText("101% BEGINNER")).toBeVisible();
 

@@ -1,9 +1,10 @@
-import { Box, Button, Tab, Tabs, Typography } from "@mui/material";
+import { Box, Button, useMediaQuery } from "@mui/material";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import type { Route } from "../classes";
 import { n64AnyList } from "../lists/n64/n64index";
 import { getRouteList } from "../utils/routeApi";
 import type { Category, Version } from "../utils/types";
+import { SRTabs } from "./SRTabs";
 import { SRTypography } from "./SRTypography";
 
 export const LandingPage = ({
@@ -11,8 +12,10 @@ export const LandingPage = ({
 }: {
   setRoute: Dispatch<SetStateAction<Route | null>>;
 }) => {
+  const smallScreen = useMediaQuery("(max-width: 600px)");
+
   const [version, setVersion] = useState<Version>("N64");
-  const [category, setCategory] = useState<Category>("any");
+  const [category, setCategory] = useState<Category>("ANY");
   const [routeList, setRouteList] = useState<Route[]>(n64AnyList);
 
   useEffect(() => {
@@ -20,43 +23,45 @@ export const LandingPage = ({
   }, [version, category]);
 
   const RouteSelect = ({ route }: { route: Route }) => (
-    <Typography variant="h2">
-      <Button variant="text" onClick={() => setRoute(route)}>
-        {route.title}
-      </Button>
-      <Button
-        variant="text"
-        href={route.link}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {route.link.includes("youtube") ? "vid" : "doc"}
-      </Button>
-    </Typography>
+    <SRTypography
+      text=""
+      variant="h2"
+      childJsx={
+        <>
+          <Button
+            style={{ fontSize: smallScreen ? "2rem" : "" }}
+            variant="text"
+            onClick={() => setRoute(route)}
+          >
+            {route.title}
+          </Button>
+          <Button
+            style={{ fontSize: smallScreen ? "2rem" : "" }}
+            variant="text"
+            href={route.link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {route.link.includes("youtube") ? "vid" : "doc"}
+          </Button>
+        </>
+      }
+    />
   );
 
   return (
     <>
-      <SRTypography isHeader text="DK64 Speedrun Routes" />
-      <Tabs
-        centered
+      <SRTypography variant="h1" text="DK64 Speedrun Routes" />
+      <SRTabs
         value={version}
-        onChange={(_, newValue) => setVersion(newValue)}
-      >
-        <Tab label="N64" value="N64" />
-        <Tab label="WII U/NSO" value="WII U/NSO" />
-      </Tabs>
-      <Tabs
-        centered
+        setValue={setVersion}
+        tabs={["N64", "WII U/NSO"]}
+      />
+      <SRTabs
         value={category}
-        onChange={(_, newValue) => setCategory(newValue)}
-      >
-        <Tab label="ANY%" value="any" />
-        <Tab label="NLE" value="nle" />
-        <Tab label="101%" value="101" />
-        <Tab label="CES" value="ces" />
-        <Tab label="EXTRA" value="other" />
-      </Tabs>
+        setValue={setCategory}
+        tabs={["ANY", "NLE", "101", "CES", "EXTRA"]}
+      />
 
       <Box sx={{ textAlign: "center" }}>
         {routeList.map((route: Route) => (
