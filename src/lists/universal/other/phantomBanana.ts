@@ -1,4 +1,4 @@
-import type { Route } from "../../../classes/Route";
+import type { Route } from "../../../classes";
 import { kongs } from "../../../utils/theme";
 
 export const phantomBanana: Route = {

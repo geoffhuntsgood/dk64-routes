@@ -17,11 +17,12 @@ export const SRTypography = ({
   <Typography
     id={id}
     variant={isHeader ? "h1" : "h3"}
-    textAlign="center"
-    color={isHeader && !id ? "white" : "black"}
-    borderBottom="2px solid black"
-    bgcolor={backgroundColor}
-    position="relative"
+    align="center"
+    style={{
+      color: isHeader && !id ? "white" : "black",
+      backgroundColor: backgroundColor,
+      borderBottom: "2px solid black"
+    }}
   >
     {childJsx}
     {text}

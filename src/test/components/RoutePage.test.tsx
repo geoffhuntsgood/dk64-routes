@@ -1,7 +1,7 @@
 import { describe, expect, test, vi } from "vitest";
 import { render } from "vitest-browser-react";
 import { userEvent } from "vitest/browser";
-import { RoutePage } from "../../components/RoutePage";
+import { RoutePage } from "../../components";
 import { any1Kong2014 } from "../../lists/universal/any/any1Kong2014";
 
 describe("RoutePage tests", () => {

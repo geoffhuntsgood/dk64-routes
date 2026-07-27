@@ -1,4 +1,4 @@
-import { Route } from "../../../classes/Route";
+import { Route } from "../../../classes";
 import { kongs } from "../../../utils/theme";
 
 export const ta101: Route = {

@@ -1,8 +1,7 @@
 import { ThemeProvider } from "@mui/material";
 import { useState } from "react";
-import type { Route } from "./classes/Route";
-import { LandingPage } from "./components/LandingPage";
-import { RoutePage } from "./components/RoutePage";
+import type { Route } from "./classes";
+import { LandingPage, RoutePage } from "./components";
 import { theme } from "./utils/theme";
 
 const App = () => {

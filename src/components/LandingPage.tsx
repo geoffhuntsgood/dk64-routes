@@ -1,20 +1,8 @@
 import { Box, Button, Tab, Tabs, Typography } from "@mui/material";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
-import type { Route } from "../classes/Route";
-import {
-  n64101List,
-  n64AnyList,
-  n64CEList,
-  n64NLEList,
-  n64OtherList
-} from "../lists/n64/n64index";
-import {
-  vc101List,
-  vcAnyList,
-  vcCEList,
-  vcNLEList,
-  vcOtherList
-} from "../lists/vc/vcIndex";
+import type { Route } from "../classes";
+import { n64AnyList } from "../lists/n64/n64index";
+import { getRouteList } from "../utils/routeApi";
 import type { Category, Version } from "../utils/types";
 import { SRTypography } from "./SRTypography";
 
@@ -28,26 +16,7 @@ export const LandingPage = ({
   const [routeList, setRouteList] = useState<Route[]>(n64AnyList);
 
   useEffect(() => {
-    switch (category) {
-      case "any":
-        setRouteList(version === "N64" ? n64AnyList : vcAnyList);
-        break;
-      case "nle":
-        setRouteList(version === "N64" ? n64NLEList : vcNLEList);
-        break;
-      case "101":
-        setRouteList(version === "N64" ? n64101List : vc101List);
-        break;
-      case "ces":
-        setRouteList(version === "N64" ? n64CEList : vcCEList);
-        break;
-      case "other":
-        setRouteList(version === "N64" ? n64OtherList : vcOtherList);
-        break;
-      default:
-        setRouteList(version === "N64" ? n64AnyList : vcAnyList);
-        break;
-    }
+    setRouteList(getRouteList(version, category));
   }, [version, category]);
 
   const RouteSelect = ({ route }: { route: Route }) => (

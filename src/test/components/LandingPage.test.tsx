@@ -1,6 +1,6 @@
 import { describe, expect, test, vi } from "vitest";
 import { render } from "vitest-browser-react";
-import { LandingPage } from "../../components/LandingPage";
+import { LandingPage } from "../../components";
 
 describe("LandingPage tests", () => {
   const getScreen = async () => {

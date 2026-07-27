@@ -1,6 +1,6 @@
 import { describe, expect, test } from "vitest";
-import { Route } from "../../classes/Route";
-import { Step } from "../../classes/Step";
+import { Route } from "../../classes";
+import { Step } from "../../classes";
 
 describe("Sanity check class/type instantiation tests", () => {
   test("Instantiate Route", () => {

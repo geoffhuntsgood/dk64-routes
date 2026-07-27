@@ -1,4 +1,4 @@
-import type { Route } from "../../classes/Route";
+import type { Route } from "../../classes";
 import { advanced101 } from "../universal/101/advanced101";
 import { beginner101 } from "../universal/101/beginner101";
 import { expert101 } from "../universal/101/expert101";

@@ -1,7 +1,7 @@
 import { Box, Button, Grid } from "@mui/material";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
-import type { Route } from "../classes/Route";
-import type { Step } from "../classes/Step";
+import type { Route } from "../classes";
+import type { Step } from "../classes";
 import { SRTypography } from "./SRTypography";
 
 export const RoutePage = ({
@@ -12,7 +12,7 @@ export const RoutePage = ({
   setRoute: Dispatch<SetStateAction<Route | null>>;
 }) => {
   const [headers, setHeaders] = useState<string[]>([]);
-  const [currHeaderIndex, setCurrHeaderIndex] = useState<number>(0);
+  const [currHeaderIndex, setCurrHeaderIndex] = useState(0);
 
   const handleArrows = (event: KeyboardEvent) => {
     setTimeout(() => {
@@ -66,7 +66,7 @@ export const RoutePage = ({
         isHeader
         text={route.title}
         childJsx={
-          <Box position="absolute" marginTop="-0.4rem">
+          <Box style={{ position: "absolute", marginTop: "-0.4rem" }}>
             <Button variant="text" onClick={() => setRoute(null)}>
               {"<"}
             </Button>
