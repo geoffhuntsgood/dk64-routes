@@ -209,6 +209,10 @@ export const beaverPercent: Route = {
       color: kongs.dk
     },
     {
+      text: "Defeat Japes lobby Beaver x2 [25]",
+      color: kongs.dk
+    },
+    {
       text: "Enter Japes",
       color: kongs.dk
     },
@@ -217,11 +221,11 @@ export const beaverPercent: Route = {
       header: true
     },
     {
-      text: "Defeat Beaver in entry area [24]",
+      text: "Defeat Beaver in entry area [26]",
       color: kongs.dk
     },
     {
-      text: "Bush Push, defeat Demo Beaver [25]",
+      text: "Bush Push, defeat Demo Beaver [27]",
       color: kongs.dk
     },
     {
@@ -233,7 +237,7 @@ export const beaverPercent: Route = {
       color: kongs.tiny
     },
     {
-      text: "Climb to Crown for Beaver x3 [28]",
+      text: "Climb to Crown for Beaver x3 [30]",
       color: kongs.tiny
     },
     {
@@ -250,7 +254,7 @@ export const beaverPercent: Route = {
       color: kongs.tiny
     },
     {
-      text: "Enter Mountain to defeat Beaver x3 [31]",
+      text: "Enter Mountain to defeat Beaver x3 [33]",
       color: kongs.diddy
     },
     {
@@ -262,7 +266,7 @@ export const beaverPercent: Route = {
       color: kongs.lanky
     },
     {
-      text: "Defeat Beaver in tunnel crossroads [32], tag at Cranky",
+      text: "Defeat Beaver in tunnel crossroads [34], tag at Cranky",
       color: kongs.lanky
     },
     {
@@ -270,7 +274,7 @@ export const beaverPercent: Route = {
       color: kongs.diddy
     },
     {
-      text: "Defeat Cranky Beavers x3 [35]",
+      text: "Defeat Cranky Beavers x3 [37]",
       color: kongs.diddy
     },
     {
@@ -278,7 +282,7 @@ export const beaverPercent: Route = {
       color: kongs.diddy
     },
     {
-      text: "Defeat Beaver x2 by Painting Hill [37]",
+      text: "Defeat Beaver x2 by Painting Hill [39]",
       color: kongs.diddy
     },
     {
@@ -286,11 +290,11 @@ export const beaverPercent: Route = {
       color: kongs.chunky
     },
     {
-      text: "Phasewalk (or phaseswim) to Diddy GB Beaver [38]",
+      text: "Phasewalk (or phaseswim) to Diddy GB Beaver [40]",
       color: kongs.chunky
     },
     {
-      text: "Out to tunnel for Beaver x2 [40]",
+      text: "Out to tunnel for Beaver x2 [42]",
       color: kongs.chunky
     },
     {
@@ -338,7 +342,7 @@ export const beaverPercent: Route = {
       color: kongs.diddy
     },
     {
-      text: "Moontail on door frame for Beaver Bother beavers x5 [45]",
+      text: "Moontail on door frame for Beaver Bother beavers x5 [47]",
       color: kongs.diddy
     },
     {
@@ -518,7 +522,7 @@ export const beaverPercent: Route = {
       color: kongs.lanky
     },
     {
-      text: "BP {8}, cross river to defeat lone Beaver [46]",
+      text: "BP {8}, cross river to defeat lone Beaver [48]",
       color: kongs.dk
     },
     {
@@ -526,7 +530,7 @@ export const beaverPercent: Route = {
       color: kongs.dk
     },
     {
-      text: "BP {7}, enter Lanky 5DI to defeat Beaver x2 [48]",
+      text: "BP {7}, enter Lanky 5DI to defeat Beaver x2 [50]",
       color: kongs.chunky
     },
     {
@@ -590,7 +594,7 @@ export const beaverPercent: Route = {
       color: kongs.dk
     },
     {
-      text: "Play Snide's Beaver Bother for Beavers x4 [52]"
+      text: "Play Snide's Beaver Bother for Beavers x4 [54]"
     },
     {
       text: "Congratulations! You're a murderer. :)"
