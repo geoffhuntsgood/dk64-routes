@@ -4,7 +4,7 @@ import { render } from "vitest-browser-react";
 import { SRTypography } from "../../components";
 
 describe("SRTypography tests", () => {
-  const getComponent = async ({
+  const getTypography = async ({
     text,
     id,
     isHeader,
@@ -31,29 +31,29 @@ describe("SRTypography tests", () => {
   };
 
   test("Check required props", async () => {
-    const component = await getComponent({
+    const typography = await getTypography({
       text: "Test Render 1"
     });
 
-    expect(component).toBeVisible();
-    expect(component).toHaveStyle({
+    expect(typography).toBeVisible();
+    expect(typography).toHaveStyle({
       color: "black",
       backgroundColor: "rgba(0, 0, 0, 0)"
     });
   });
 
   test("Check header color w/no ID", async () => {
-    const component = await getComponent({
+    const typography = await getTypography({
       text: "Test Render 2",
       isHeader: true
     });
 
-    expect(component).toBeVisible();
-    expect(component).toHaveStyle("color: white");
+    expect(typography).toBeVisible();
+    expect(typography).toHaveStyle("color: white");
   });
 
   test("Check all optional props", async () => {
-    const component = await getComponent({
+    const typography = await getTypography({
       text: "Test Render 3",
       id: "testID",
       isHeader: true,
@@ -61,11 +61,11 @@ describe("SRTypography tests", () => {
       childJsx: <div>I'm a child!</div>
     });
 
-    expect(component).toBeVisible();
-    expect(component).toHaveStyle({
+    expect(typography).toBeVisible();
+    expect(typography).toHaveStyle({
       color: "black",
       backgroundColor: "yellow"
     });
-    expect(component.getByText("I'm a child!")).toBeVisible();
+    expect(typography.getByText("I'm a child!")).toBeVisible();
   });
 });

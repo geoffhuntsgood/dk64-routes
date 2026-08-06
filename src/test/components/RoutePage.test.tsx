@@ -7,8 +7,8 @@ import { any1Kong2014 } from "../../lists/universal/any/any1Kong2014";
 describe("RoutePage tests", () => {
   const backButtonMock = vi.fn();
 
-  const getScreen = async () => {
-    return await render(
+  const getScreen = () => {
+    return render(
       <RoutePage route={any1Kong2014} setRoute={backButtonMock} />
     );
   };
@@ -51,6 +51,9 @@ describe("RoutePage tests", () => {
     await userEvent.keyboard("{ArrowRight}");
     await userEvent.keyboard("{ArrowRight}");
     expect(scrollIntoViewMock).toHaveBeenCalledTimes(8);
+    await userEvent.keyboard("{ArrowRight}");
+    await userEvent.keyboard("{ArrowRight}");
+    await userEvent.keyboard("{ArrowRight}");
     await userEvent.keyboard("{ArrowRight}");
     expect(scrollIntoViewMock).toHaveBeenCalledTimes(8);
   });

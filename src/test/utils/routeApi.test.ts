@@ -14,6 +14,7 @@ import {
   vcOtherList
 } from "../../lists/vc/vcIndex";
 import { getRouteList } from "../../utils/routeApi";
+import type { Category } from "../../utils/types";
 
 describe("routeApi tests", () => {
   describe("N64", () => {
@@ -36,6 +37,10 @@ describe("routeApi tests", () => {
     test("OTHER", () => {
       expect(getRouteList("N64", "EXTRA")).toEqual(n64OtherList);
     });
+
+    test("Incorrect", () => {
+      expect(getRouteList("N64", "wrong" as Category)).toEqual(n64AnyList);
+    });
   });
 
   describe("WII U/NSO", () => {
@@ -57,6 +62,10 @@ describe("routeApi tests", () => {
 
     test("OTHER", () => {
       expect(getRouteList("WII U/NSO", "EXTRA")).toEqual(vcOtherList);
+    });
+
+    test("Incorrect", () => {
+      expect(getRouteList("WII U/NSO", "wrong" as Category)).toEqual(vcAnyList);
     });
   });
 });

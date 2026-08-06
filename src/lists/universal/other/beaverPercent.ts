@@ -145,6 +145,10 @@ export const beaverPercent: Route = {
       color: kongs.chunky
     },
     {
+      text: "GET HOMING AMMO FROM SHED FOR LANKY",
+      color: kongs.chunky
+    },
+    {
       text: "Enter W4 T&S to tag",
       color: kongs.chunky
     },

@@ -21,7 +21,13 @@ export default defineConfig({
         "src/**/index.ts",
         "src/utils/theme.ts",
         "src/utils/types.ts"
-      ]
+      ],
+      thresholds: {
+        lines: 90,
+        functions: 90,
+        branches: 90,
+        statements: 90
+      }
     }
   }
 });

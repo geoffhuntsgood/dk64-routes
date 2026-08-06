@@ -3,8 +3,8 @@ import { render } from "vitest-browser-react";
 import { LandingPage } from "../../components";
 
 describe("LandingPage tests", () => {
-  const getScreen = async () => {
-    return await render(<LandingPage setRoute={vi.fn()} />);
+  const getScreen = () => {
+    return render(<LandingPage setRoute={vi.fn()} />);
   };
 
   test("Check initial render", async () => {
