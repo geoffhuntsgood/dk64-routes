@@ -10,7 +10,8 @@
     "test": "vitest run --browser.headless",
     "test:watch": "vitest --browser.headless",
     "coverage": "vitest run --browser.headless --coverage",
-    "coverage:watch": "vitest --browser.headless --coverage"
+    "coverage:watch": "vitest --browser.headless --coverage",
+    "prep": "npm i && npm run lint && npm run coverage && npm run build"
   },
   "dependencies": {
     "@custom-react-hooks/use-key-press": "^1.5.1",
