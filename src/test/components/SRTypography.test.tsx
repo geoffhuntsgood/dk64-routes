@@ -1,5 +1,4 @@
 import type { JSX } from "react";
-import { describe, expect, test } from "vitest";
 import { render } from "vitest-browser-react";
 import { SRTypography } from "../../components";
 
